@@ -1,3 +1,3 @@
 <script lang="ts">
-	import projects from '../data/projects';
+	import weeks from '../data/weeks';
 </script>

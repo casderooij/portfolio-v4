@@ -13,15 +13,15 @@
 			},
 			{
 				"slug": "css-protest",
-				"days": 6
+				"days": [6]
 			},
 			{
-				"days": 1,
+				"days": [1],
 				"tags": ["experiment", "web"],
 				"images": [{ "src": "test.jpeg", "alt": "preview of css library" }]
 			},
 			{
-				"days": 3,
+				"days": [3],
 				"images": [{ "src": "test.jpeg", "alt": "preview of css library" }]
 			}
 		]
