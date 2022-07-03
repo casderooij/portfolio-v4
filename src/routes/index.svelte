@@ -1,2 +1,11 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import weeks from '../data/weeks';
+	import Week from '../components/Week.svelte';
+	import Block from '../components/Block.svelte';
+</script>
+
+<div class="flex flex-col gap-y-4 divide-y divide-black divide-dashed">
+	{#each weeks as week}
+		<Week number={week.number} blocks={week.blocks} />
+	{/each}
+</div>
