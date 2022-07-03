@@ -1,4 +1,3 @@
 <script lang="ts">
-	const projects = [];
-	const weeks = [];
+	import projects from '../data/projects';
 </script>
