@@ -32,12 +32,6 @@
 		return newCols.reverse();
 	}
 
-	/**
-	 * when block has no images and is project, on click: open project panel directly
-	 * when block has images and is project, on click: scale block and show link to project panel
-	 *
-	 */
-
 	function clickOutside(node: any) {
 		const handleClick = (event: any) => {
 			if (node && !node.contains(event.target) && !event.defaultPrevented) {
@@ -78,7 +72,7 @@
 						$columns = growBlock(block.days);
 					}}
 					on:focusout={() => ($columns = [1, 1, 1, 1, 1, 1, 1])}
-					class="bg-blue-300 aspect-square z-20"
+					class="bg-blue-300 aspect-square rounded"
 					style="grid-column: {block.column}; grid-row: {block.row};"
 				/>
 			{/if}
@@ -86,7 +80,7 @@
 	</div>
 
 	<div
-		class="grid font-mono text-mono-mobile gap-x-2 mt-2"
+		class="grid font-mono text-[8px] gap-x-2 mt-2"
 		style="grid-template-columns: {$columns[0]}fr {$columns[1]}fr {$columns[2]}fr {$columns[3]}fr {$columns[4]}fr {$columns[5]}fr {$columns[6]}fr ;"
 	>
 		{#each days as day}
