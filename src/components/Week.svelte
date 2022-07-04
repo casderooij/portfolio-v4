@@ -23,7 +23,7 @@
 		let newCols = [];
 		for (let i = 1; i <= 7; i++) {
 			if (i === days[index]) {
-				newCols.push(4 / days.length);
+				newCols.push(5 / days.length);
 				index++;
 			} else {
 				newCols.push(1);
@@ -53,6 +53,8 @@
 			}
 		};
 	}
+
+	const days = Array.apply(null, Array(7)).map((_, i) => getDay(startDate, -i));
 </script>
 
 <div id="week">
@@ -87,12 +89,8 @@
 		class="grid font-mono text-mono-mobile gap-x-2 mt-2"
 		style="grid-template-columns: {$columns[0]}fr {$columns[1]}fr {$columns[2]}fr {$columns[3]}fr {$columns[4]}fr {$columns[5]}fr {$columns[6]}fr ;"
 	>
-		<p>{getDay(startDate, 0)}</p>
-		<p>{getDay(startDate, -1)}</p>
-		<p>{getDay(startDate, -2)}</p>
-		<p>{getDay(startDate, -3)}</p>
-		<p>{getDay(startDate, -4)}</p>
-		<p>{getDay(startDate, -5)}</p>
-		<p>{getDay(startDate, -6)}</p>
+		{#each days as day}
+			<span>{day}</span>
+		{/each}
 	</div>
 </div>
