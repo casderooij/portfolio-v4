@@ -1,15 +1,22 @@
 <script lang="ts">
 	import { spring } from 'svelte/motion';
-	import { fly } from 'svelte/transition';
-	import Block from './Block.svelte';
 	import ProjectBlock from './ProjectBlock.svelte';
 
 	export let number: number;
 	export let blocks: any;
 
 	let columns = spring([1, 1, 1, 1, 1, 1, 1], { stiffness: 0.1, damping: 0.4 });
-	let active: number;
-	let weekEl: HTMLElement;
+
+	function getDateOfWeek(w, y) {
+		const d = 1 + (w - 1) * 7;
+		return new Date(y, 0, d + 8);
+	}
+
+	function getDay(start, d) {
+		return new Date(new Date().setDate(start.getDate() + d)).getDate();
+	}
+
+	const startDate = getDateOfWeek(number, 2022);
 
 	function growBlock(days: number[]) {
 		let index = 0;
@@ -48,7 +55,7 @@
 	}
 </script>
 
-<div id="week" bind:this={weekEl}>
+<div id="week">
 	<span class="text-mono-mobile font-mono">{number}</span>
 
 	<div
@@ -64,59 +71,28 @@
 					tabindex="0"
 					on:touchstart={(e) => {
 						$columns = growBlock(block.days);
-						active = index;
 					}}
 					on:focus={() => {
 						$columns = growBlock(block.days);
-						active = index;
 					}}
 					on:focusout={() => ($columns = [1, 1, 1, 1, 1, 1, 1])}
 					class="bg-blue-300 aspect-square z-20"
 					style="grid-column: {block.column}; grid-row: {block.row};"
 				/>
 			{/if}
-
-			<!-- <div
-				tabindex="0"
-				on:click={(e) => {
-					$columns = growBlock(block.days);
-					active = index;
-				}}
-				on:focus={() => {
-					$columns = growBlock(block.days);
-					active = index;
-				}}
-				class={`bg-white rounded relative flex flex-col divide-y divide-black divide-dashed border border-black overflow-hidden self-center cursor-pointer ${
-					index === active ? 'shadow-block' : ''
-				}`}
-				style={`grid-column: ${block.column};
- grid-row: ${block.row}; ${block.row > 1 ? 'margin-top: -14px;' : ''} ${
-					block.row % 2 === 0 ? 'margin-right: 4px;' : 'margin-left: 4px;'
-				} ${index === active ? 'z-index: 10;' : ''}`}
-			>
-				{#if block.slug}
-					<p class="p-1 truncate font-mono text-mono-mobile">
-						{block.slug}
-					</p>
-				{/if}
-				{#if block.images}
-					<div>
-						{#each block.images as image}
-							<div class="">
-								<div class="bg-red-200 aspect-square" />
-							</div>
-						{/each}
-					</div>
-				{/if}
-				{#if index === active && block.project}
-					<div
-						transition:fly
-						class="border border-solid border-black bg-white px-2 py-1 absolute top-2 left-2 text-[#00f] font-mono text-mono-mobile"
-					>
-						{block.project.slug}
-					</div>
-				{/if}
-			</div> -->
 		{/each}
+	</div>
+
+	<div
+		class="grid font-mono text-mono-mobile gap-x-2 mt-2"
+		style="grid-template-columns: {$columns[0]}fr {$columns[1]}fr {$columns[2]}fr {$columns[3]}fr {$columns[4]}fr {$columns[5]}fr {$columns[6]}fr ;"
+	>
+		<p>{getDay(startDate, 0)}</p>
+		<p>{getDay(startDate, -1)}</p>
+		<p>{getDay(startDate, -2)}</p>
+		<p>{getDay(startDate, -3)}</p>
+		<p>{getDay(startDate, -4)}</p>
+		<p>{getDay(startDate, -5)}</p>
+		<p>{getDay(startDate, -6)}</p>
 	</div>
 </div>
