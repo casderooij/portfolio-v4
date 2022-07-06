@@ -4,7 +4,9 @@
 
 	export const load = async ({ params }): Promise<LoadOutput> => {
 		try {
-			const project: SvelteComponent = await import(`../data/_projects/${params.project}/index.md`);
+			const project: SvelteComponent = await import(
+				`../../data/_projects/${params.project}/index.md`
+			);
 
 			return {
 				props: {
