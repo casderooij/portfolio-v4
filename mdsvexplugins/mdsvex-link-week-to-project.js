@@ -1,4 +1,4 @@
-import weekData from '../src/data/weeks.js';
+import weekData from '../src/data/weekData.js';
 
 export default function mdsvexLinkWeekToProject() {
 	return function transformer(_, vFile) {
