@@ -4,16 +4,16 @@ export default [
 		year: 2022,
 		blocks: [
 			{
-				project: 'portfolio',
+				projectSlug: 'portfolio',
 				days: [1, 2, 3, 4]
 			},
 			{
-				project: 'css-protest',
+				projectSlug: 'css-protest',
 				days: [3, 4, 5],
 				images: [{ src: 'test.jpeg', alt: 'preview of css library' }]
 			},
 			{
-				project: 'css-protest',
+				projectSlug: 'css-protest',
 				days: [7]
 			},
 			{
@@ -27,7 +27,7 @@ export default [
 		year: 2022,
 		blocks: [
 			{
-				project: 'css-protest',
+				projectSlug: 'css-protest',
 				days: [6]
 			},
 			{
@@ -46,16 +46,16 @@ export default [
 		year: 2022,
 		blocks: [
 			{
-				project: 'portfolio',
+				projectSlug: 'portfolio',
 				days: [1, 2, 3, 4]
 			},
 			{
-				project: 'css-protest',
+				projectSlug: 'css-protest',
 				days: [3, 4, 5],
 				images: [{ src: 'test.jpeg', alt: 'preview of css library' }]
 			},
 			{
-				project: 'css-protest',
+				projectSlug: 'css-protest',
 				days: [7]
 			},
 			{

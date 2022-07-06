@@ -1,7 +1,20 @@
 import data from './weekData.js';
-import projects from './projects';
 
-console.log(JSON.stringify(data));
+const allProjectFiles = import.meta.glob('./_projects/**/index.md');
+const iterableProjectFiles = Object.entries(allProjectFiles);
+console.log(iterableProjectFiles);
+
+const getProjectData = async () => {
+	const projects = await Promise.all(
+		iterableProjectFiles.map(async ([path, resolver]) => {
+			const { metadata } = await resolver();
+
+			return {
+				meta: metadata
+			};
+		})
+	);
+};
 
 const toColumnSpan = (days: number[]) => {
 	const startColumn = 8 - days[days.length - 1];
