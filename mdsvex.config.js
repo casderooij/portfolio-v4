@@ -9,11 +9,7 @@ const config = defineConfig({
 	},
 
 	remarkPlugins: [mdsvexLinkWeekToProject],
-	rehypePlugins: [],
-
-	layout: {
-		projects: './src/routes/projects/_project.svelte'
-	}
+	rehypePlugins: []
 });
 
 export default config;
