@@ -1,10 +1,10 @@
-import fetchProjectData from '../../utils/fetchProjectData.js';
+import fetchProjectData from '$utils/fetchProjectData';
+import type { Block, PositionedBlock } from '$utils/types';
 
 export const get = async () => {
-	const weeks = await import('../../data/weekData.js');
+	const weeks = await import('$data/weeks.js');
 
-	const projects = await (await fetchProjectData()).map((project) => project.meta);
-	// console.log(projects);
+	const projects = await fetchProjectData();
 
 	const toColumnSpan = (days: number[]) => {
 		const startColumn = 8 - days[days.length - 1];
@@ -29,10 +29,15 @@ export const get = async () => {
 		}
 	};
 
-	const checkOverlap = (a: Block, b: Block) => {
-		return a.days.some((i) => b.days.includes(i)) && a.row === b.row;
+	const checkOverlap = (a: PositionedBlock, b: PositionedBlock) => {
+		return a.days.some((i: number) => b.days.includes(i)) && a.row === b.row;
 	};
-	const fitBlocks = (blocks: Block[], fittedBlocks: Block[] = [], index = 0): Block[] => {
+
+	const fitBlocks = (
+		blocks: PositionedBlock[],
+		fittedBlocks: PositionedBlock[] = [],
+		index = 0
+	): Block[] => {
 		const overlap = fittedBlocks.some((a) => checkOverlap(a, blocks[index]));
 		if (overlap) {
 			blocks[index].row += 1;
@@ -65,7 +70,7 @@ export const get = async () => {
 				.sort(sortProjectsWithImages),
 			number: week.number
 		}))
-		.map((week) => ({ blocks: fitBlocks(week.blocks), number: week.number }));
+		.map((week) => ({ blocks: fitBlocks(week.blocks as PositionedBlock[]), number: week.number }));
 
 	return {
 		body: fittedWeeks
