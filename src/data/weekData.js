@@ -1,6 +1,7 @@
 export default [
 	{
 		number: 26,
+		year: 2022,
 		blocks: [
 			{
 				project: 'portfolio',
@@ -23,6 +24,7 @@ export default [
 	},
 	{
 		number: 25,
+		year: 2022,
 		blocks: [
 			{
 				project: 'css-protest',
@@ -41,6 +43,7 @@ export default [
 	},
 	{
 		number: 24,
+		year: 2022,
 		blocks: [
 			{
 				project: 'portfolio',

@@ -1,5 +1,7 @@
-import data from './weeks.json';
+import data from './weekData.js';
 import projects from './projects';
+
+console.log(JSON.stringify(data));
 
 const toColumnSpan = (days: number[]) => {
 	const startColumn = 8 - days[days.length - 1];
@@ -47,13 +49,13 @@ const weeks = data
 		blocks: week.blocks
 			.map((block) => {
 				const { column, columnWidth } = toColumnSpan(block.days);
-				const project = block.slug ? projects[block.slug] : undefined;
+				const project = block.project ? projects[block.project] : undefined;
 				return {
 					...block,
 					row: 1,
 					column,
 					columnWidth,
-					project
+					blockProject: project
 				};
 			})
 			.sort(sortProjectsWithImages),

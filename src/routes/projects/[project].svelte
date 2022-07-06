@@ -32,6 +32,6 @@
 
 <ul>
 	{#each meta.weeks as week}
-		<li>{week.number}</li>
+		<li><a href="/#{week.year}-{week.number}">{week.number} {week.year}</a></li>
 	{/each}
 </ul>
