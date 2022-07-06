@@ -1,5 +1,20 @@
-import data from './weeks.json';
-import projects from './projects';
+import data from './weekData.js';
+
+const allProjectFiles = import.meta.glob('./_projects/**/index.md');
+const iterableProjectFiles = Object.entries(allProjectFiles);
+console.log(iterableProjectFiles);
+
+const getProjectData = async () => {
+	const projects = await Promise.all(
+		iterableProjectFiles.map(async ([path, resolver]) => {
+			const { metadata } = await resolver();
+
+			return {
+				meta: metadata
+			};
+		})
+	);
+};
 
 const toColumnSpan = (days: number[]) => {
 	const startColumn = 8 - days[days.length - 1];
@@ -47,13 +62,13 @@ const weeks = data
 		blocks: week.blocks
 			.map((block) => {
 				const { column, columnWidth } = toColumnSpan(block.days);
-				const project = block.slug ? projects[block.slug] : undefined;
+				const project = block.project ? projects[block.project] : undefined;
 				return {
 					...block,
 					row: 1,
 					column,
 					columnWidth,
-					project
+					blockProject: project
 				};
 			})
 			.sort(sortProjectsWithImages),
