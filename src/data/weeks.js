@@ -1,3 +1,4 @@
+/** @type {import('$utils/types').Week[]} */
 export default [
 	{
 		number: 26,

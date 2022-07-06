@@ -1,18 +1,20 @@
 <script lang="ts">
+	import type { PositionedBlock } from '$utils/types';
+
 	import { spring } from 'svelte/motion';
 	import ProjectBlock from './ProjectBlock.svelte';
 
 	export let number: number;
-	export let blocks: any;
+	export let blocks: PositionedBlock[];
 
 	let columns = spring([1, 1, 1, 1, 1, 1, 1], { stiffness: 0.1, damping: 0.4 });
 
-	function getDateOfWeek(w, y) {
+	function getDateOfWeek(w: number, y: number) {
 		const d = 1 + (w - 1) * 7;
 		return new Date(y, 0, d + 8);
 	}
 
-	function getDay(start, d) {
+	function getDay(start: Date, d: number) {
 		return new Date(new Date().setDate(start.getDate() + d)).getDate();
 	}
 

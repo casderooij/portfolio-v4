@@ -1,4 +1,4 @@
-import fetchProjectData from '../../utils/fetchProjectData';
+import fetchProjectData from '$utils/fetchProjectData';
 
 export const get = async () => {
 	return {

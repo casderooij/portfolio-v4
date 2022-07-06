@@ -20,6 +20,11 @@ const config = {
 		adapter: adapter(),
 		prerender: {
 			default: true
+		},
+		alias: {
+			$components: 'src/components',
+			$data: 'src/data',
+			$utils: 'src/utils'
 		}
 	}
 };
