@@ -7,7 +7,7 @@
 
 <div
 	on:click={onClick}
-	class={`bg-white rounded flex flex-col divide-y divide-black overflow-hidden border border-black ${
+	class={`bg-white flex flex-col divide-y divide-black overflow-hidden border border-black ${
 		row > 1 ? 'self-center' : 'self-start'
 	}`}
 	style={`grid-column: ${column};

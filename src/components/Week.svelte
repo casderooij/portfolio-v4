@@ -74,7 +74,7 @@
 						$columns = growBlock(block.days);
 					}}
 					on:focusout={() => ($columns = [1, 1, 1, 1, 1, 1, 1])}
-					class="bg-blue-300 aspect-square rounded"
+					class="bg-blue-300 aspect-square"
 					style="grid-column: {block.column}; grid-row: {block.row};"
 				/>
 			{/if}
