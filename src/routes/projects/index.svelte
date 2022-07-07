@@ -19,7 +19,7 @@
 <ul>
 	{#each projects as project}
 		<li>
-			<a href="/projects/{project.meta.slug}">{project.meta.title}</a>
+			<a href="/projects/{project.slug}">{project.title}</a>
 		</li>
 	{/each}
 </ul>

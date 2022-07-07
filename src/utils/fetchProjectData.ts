@@ -7,7 +7,6 @@ const fetchProjectData = async () => {
 	const allProjects: Project[] = await Promise.all(
 		iterableProjectFiles.map(async ([_, resolver]) => {
 			const { metadata } = await resolver();
-			console.log(metadata);
 
 			return {
 				...metadata
