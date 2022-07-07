@@ -24,7 +24,7 @@
 </script>
 
 <script lang="ts">
-	export let ProjectContent: SvelteComponent;
+	// export let ProjectContent: SvelteComponent;
 	export let meta: any;
 </script>
 

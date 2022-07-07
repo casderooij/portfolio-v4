@@ -1,9 +1,14 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ['PP Neue Montreal', ...defaultTheme.fontFamily.sans]
+			},
 			fontSize: {
 				'mono-mobile': ['12px', '16px']
 			},

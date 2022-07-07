@@ -12,7 +12,6 @@ export type Image = {
 export type PositionedBlock = Block & {
 	row: number;
 	column?: string;
-	columnWidth?: number;
 	project: Project;
 };
 

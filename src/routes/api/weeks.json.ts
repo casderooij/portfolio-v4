@@ -56,14 +56,13 @@ export const get = async () => {
 		.map((week) => ({
 			blocks: week.blocks
 				.map((block) => {
-					const { column, columnWidth } = toColumnSpan(block.days);
+					const { column } = toColumnSpan(block.days);
 					const project = projects.find((project) => project.slug === block.projectSlug);
 
 					return {
 						...block,
 						row: 1,
 						column,
-						columnWidth,
 						project
 					};
 				})
