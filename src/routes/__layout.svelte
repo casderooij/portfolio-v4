@@ -14,7 +14,6 @@
 
 <script lang="ts">
 	import '../app.css';
-	import { browser } from '$app/env';
 	import Header from '$components/Header.svelte';
 	import type { Week as WeekType } from '$utils/types';
 	import Week from '$components/Week.svelte';
@@ -22,10 +21,6 @@
 	export let weeks: WeekType[];
 
 	let show = false;
-
-	if (browser) {
-		console.log(location.href);
-	}
 </script>
 
 <div class="relative overflow-x-hidden min-h-screen">
