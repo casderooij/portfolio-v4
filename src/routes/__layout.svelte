@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
-	export const load = async ({ fetch }) => {
+	import type { Load } from '@sveltejs/kit';
+	export const load: Load = async ({ fetch }) => {
 		const response = await fetch(`/api/weeks.json`);
 		const weeks = await response.json();
 
