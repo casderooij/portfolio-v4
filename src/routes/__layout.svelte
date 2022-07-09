@@ -19,23 +19,18 @@
 	import Week from '$components/Week.svelte';
 
 	export let weeks: WeekType[];
-
-	let show = false;
 </script>
 
-<div class="relative overflow-x-hidden min-h-screen">
-	<Header />
+<!-- full page or in one of the two columns -->
+<!-- <Header /> -->
 
-	<div class="sm:hidden">
-		<slot />
+<div class="flex max-h-screen">
+	<div class="flex-1 min-h-full overflow-y-scroll p-4">
+		{#each weeks as week}
+			<Week number={week.number} blocks={week.blocks} />
+		{/each}
 	</div>
-
-	<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-2 divide-x divide-black">
-		<div class="flex flex-col gap-y-4 divide-y divide-black">
-			{#each weeks as week}
-				<Week number={week.number} blocks={week.blocks} />
-			{/each}
-		</div>
-		<div class="px-2 hidden sm:block"><slot /></div>
+	<div class="flex-1 min-h-full overflow-y-scroll p-4">
+		<slot />
 	</div>
 </div>
