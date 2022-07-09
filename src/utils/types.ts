@@ -25,5 +25,5 @@ export type Block = {
 export type Week = {
 	number: number;
 	year: number;
-	blocks: Block[];
+	blocks: PositionedBlock[];
 };
