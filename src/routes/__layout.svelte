@@ -1,23 +1,23 @@
 <script context="module" lang="ts">
-	import type { Load } from '@sveltejs/kit';
+	import type { Load } from '@sveltejs/kit'
 	export const load: Load = async ({ fetch }) => {
-		const response = await fetch(`/api/weeks.json`);
-		const weeks = await response.json();
+		const response = await fetch(`/api/weeks.json`)
+		const weeks = await response.json()
 
 		return {
 			props: {
 				weeks
 			}
-		};
-	};
+		}
+	}
 </script>
 
 <script lang="ts">
-	import '../app.css';
-	import type { Week } from '$utils/types';
-	import Timeline from '$components/Timeline.svelte';
+	import '../styles/app.css'
+	import type { Week } from '$utils/types'
+	import Timeline from '$components/Timeline.svelte'
 
-	export let weeks: Week[];
+	export let weeks: Week[]
 </script>
 
 <div class="flex flex-col h-screen">
@@ -41,3 +41,11 @@
 </div>
 
 <footer class="mx-4 py-2 border-t border-black">footer</footer>
+
+<style lang="postcss">
+	:global(body) {
+		margin: 0;
+		padding: 0;
+		background-color: var(--gray-4);
+	}
+</style>

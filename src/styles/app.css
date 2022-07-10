@@ -1,0 +1,7 @@
+@import 'open-props/postcss/normalize';
+
+@font-face {
+	font-family: 'PP Neue Montreal';
+	src: url('/fonts/pp-neue-montreal-regular.woff2') format('woff2'),
+		url('/fonts/pp-neue-montreal-regular.woff') format('woff');
+}
