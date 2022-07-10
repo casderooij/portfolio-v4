@@ -37,11 +37,20 @@
 	</div>
 </main>
 
-<!-- <footer >footer</footer> -->
+<footer>footer</footer>
+
 <style lang="postcss">
+	:global(html) {
+		--header-height: var(--size-6);
+	}
+
 	header {
 		background-color: lightcoral;
-		height: var(--size-6);
+
+		position: sticky;
+		top: 0;
+		height: var(--header-height);
+		z-index: 2;
 
 		display: flex;
 		justify-content: space-between;
@@ -53,13 +62,25 @@
 	}
 
 	main {
+		min-height: calc(100vh - var(--header-height));
+		scroll-margin-top: var(--header-height);
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 	}
 
 	.timeline-wrapper {
 		background: lightcyan;
+		position: sticky;
+		top: var(--header-height);
+		height: calc(100vh - var(--header-height));
+		overflow-y: scroll;
 	}
 
 	.page-wrapper {
 		background: lightblue;
+	}
+
+	footer {
+		background: yellow;
 	}
 </style>
