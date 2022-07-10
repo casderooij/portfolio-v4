@@ -5,8 +5,8 @@
 	export let weeks: WeekType[]
 </script>
 
-<div class="flex flex-col gap-4 divide-y divide-black">
+<ul>
 	{#each weeks as week}
 		<Week number={week.number} blocks={week.blocks} />
 	{/each}
-</div>
+</ul>

@@ -1,7 +1,28 @@
-@import 'open-props/postcss/normalize';
-
 @font-face {
 	font-family: 'PP Neue Montreal';
 	src: url('/fonts/pp-neue-montreal-regular.woff2') format('woff2'),
 		url('/fonts/pp-neue-montreal-regular.woff') format('woff');
+}
+
+:root {
+	--font-sans: 'PP Neue Montreal', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+		Noto Sans, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background-color: var(--gray-4);
+	font-family: var(--font-sans);
+}
+
+ul {
+	padding: 0;
+	list-style: none;
 }
