@@ -31,12 +31,12 @@
 	export let weeks: { number: number; year: number }[];
 </script>
 
-<h1>{meta.title}</h1>
-
 <ul>
 	{#each weeks as week}
 		<li><a href="/#{week.year}-{week.number}">{week.number} {week.year}</a></li>
 	{/each}
 </ul>
+
+<h1>{meta.title}</h1>
 
 <svelte:component this={ProjectContent} />
