@@ -15,6 +15,7 @@
 <script lang="ts">
 	import '../styles/app.css'
 	import type { Week } from '$utils/types'
+	import HomePageHeader from '$components/HomePageHeader.svelte'
 	import Timeline from '$components/Timeline.svelte'
 
 	export let weeks: Week[]
@@ -30,22 +31,35 @@
 
 <main>
 	<div class="timeline-wrapper">
+		<HomePageHeader />
 		<Timeline {weeks} />
 	</div>
+	<div class="divider" />
 	<div class="page-wrapper">
 		<slot />
 	</div>
 </main>
 
-<footer>footer</footer>
+<footer>
+	<p>Cas de Rooij</p>
+	<ul>
+		<li>
+			<a href="#">github</a>
+		</li>
+		<li>
+			<a href="#">instagram</a>
+		</li>
+	</ul>
+</footer>
 
 <style lang="postcss">
 	:global(html) {
-		--header-height: var(--size-6);
+		--header-height: var(--size-8);
 	}
 
 	header {
-		background-color: lightcoral;
+		margin-inline: var(--size-2);
+		border-bottom: var(--border);
 
 		position: sticky;
 		top: 0;
@@ -56,8 +70,20 @@
 		justify-content: space-between;
 		align-items: center;
 
+		background-color: var(--background);
+
+		a {
+			background-color: white;
+			color: var(--text);
+			text-decoration: none;
+			padding-inline: var(--size-3);
+			padding-block: var(--size-1);
+			border-radius: var(--radius-round);
+		}
+
 		ul {
 			display: flex;
+			gap: var(--size-2);
 		}
 	}
 
@@ -65,22 +91,38 @@
 		min-height: calc(100vh - var(--header-height));
 		scroll-margin-top: var(--header-height);
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr 1px 1fr;
+		padding-inline: var(--size-2);
 	}
 
 	.timeline-wrapper {
-		background: lightcyan;
 		position: sticky;
 		top: var(--header-height);
 		height: calc(100vh - var(--header-height));
 		overflow-y: scroll;
+		padding-right: var(--size-2);
 	}
 
 	.page-wrapper {
-		background: lightblue;
+		margin-block: var(--size-2);
+		padding-left: var(--size-2);
+	}
+
+	.divider {
+		margin-block: var(--size-2);
+		border-right: var(--border);
 	}
 
 	footer {
-		background: yellow;
+		margin-inline: var(--size-2);
+		padding-block: var(--size-2);
+		display: flex;
+		justify-content: space-between;
+		border-top: var(--border);
+
+		ul {
+			display: flex;
+			gap: var(--size-2);
+		}
 	}
 </style>

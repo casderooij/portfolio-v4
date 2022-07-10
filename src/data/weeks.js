@@ -1,4 +1,4 @@
-/** @type {import('$utils/types').Week[]} */
+/** @type {import('$utils/types').WeekData[]} */
 export default [
 	{
 		number: 26,
@@ -29,7 +29,7 @@ export default [
 		blocks: [
 			{
 				projectSlug: 'css-protest',
-				days: [6]
+				days: [5, 6]
 			},
 			{
 				days: [1],

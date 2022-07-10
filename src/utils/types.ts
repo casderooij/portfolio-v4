@@ -22,6 +22,12 @@ export type Block = {
 	tags?: string[]
 }
 
+export type WeekData = {
+	number: number
+	year: number
+	blocks: Block[]
+}
+
 export type Week = {
 	number: number
 	year: number

@@ -21,8 +21,6 @@
 </script>
 
 <li>
-	<span class="week-number">{number}</span>
-
 	<div
 		class="week-wrapper"
 		style:grid-template-columns="{$columns[0]}fr {$columns[1]}fr {$columns[2]}fr {$columns[3]}fr {$columns[4]}fr
@@ -47,18 +45,27 @@
 </li>
 
 <style lang="postcss">
+	li {
+		padding-block: var(--size-2);
+		border-bottom: var(--border);
+	}
+	li:last-child {
+		border-bottom: none;
+	}
+
 	.week-number {
-		font-family: var(--font-mono);
 		font-size: var(--font-size-0);
 	}
 
 	.week-wrapper {
 		display: grid;
-		gap: 2px;
+		gap: var(--size-1);
 	}
 
 	.single-day {
 		background-color: var(--blue-3);
 		aspect-ratio: var(--ratio-square);
+		border-radius: var(--radius-1);
+		cursor: pointer;
 	}
 </style>
