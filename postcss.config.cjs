@@ -1,14 +1,14 @@
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
-const postcssJitProps = require('postcss-jit-props');
-const OpenProps = require('open-props');
+const cssnano = require('cssnano')
+const postcssJitProps = require('postcss-jit-props')
+const OpenProps = require('open-props')
 
-const mode = process.env.NODE_ENV;
-const dev = mode === 'development';
+const mode = process.env.NODE_ENV
+const dev = mode === 'development'
 
 const config = {
 	plugins: [
-		autoprefixer(),
+		require('autoprefixer'),
+		require('postcss-nested'),
 		postcssJitProps(OpenProps),
 
 		!dev &&
@@ -16,6 +16,6 @@ const config = {
 				preset: 'default'
 			})
 	]
-};
+}
 
-module.exports = config;
+module.exports = config

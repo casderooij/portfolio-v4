@@ -28,6 +28,7 @@
 		"postcss": "^8.4.14",
 		"postcss-jit-props": "^1.0.7",
 		"postcss-load-config": "^4.0.1",
+		"postcss-nested": "^5.0.6",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
 		"svelte": "^3.44.0",
