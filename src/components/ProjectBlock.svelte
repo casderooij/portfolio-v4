@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { PositionedBlock } from '$utils/types';
+	import type { PositionedBlock } from '$utils/types'
 
-	export let block: PositionedBlock;
+	export let block: PositionedBlock
 </script>
 
 <a

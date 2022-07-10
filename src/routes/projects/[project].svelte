@@ -1,19 +1,19 @@
 <script context="module" lang="ts">
-	import type { Load } from './__types/[project]';
-	import type { SvelteComponent } from 'svelte';
-	import type { Week } from '$utils/types';
+	import type { Load } from './__types/[project]'
+	import type { SvelteComponent } from 'svelte'
+	import type { Week } from '$utils/types'
 
 	export const load: Load<{
-		ProjectContent: SvelteComponent;
-		meta: { title: string; slug: string };
-		weeks: { number: number; year: number }[];
+		ProjectContent: SvelteComponent
+		meta: { title: string; slug: string }
+		weeks: { number: number; year: number }[]
 	}> = async ({ params }) => {
-		const project = await import(`../../data/_projects/${params.project}/index.md`);
-		const meta = { title: project.metadata.title, slug: project.metadata.slug };
+		const project = await import(`../../data/_projects/${params.project}/index.md`)
+		const meta = { title: project.metadata.title, slug: project.metadata.slug }
 		const weeks = project.metadata.weeks.map((week: Week) => ({
 			number: week.number,
 			year: week.year
-		}));
+		}))
 
 		return {
 			props: {
@@ -21,14 +21,14 @@
 				meta,
 				weeks
 			}
-		};
-	};
+		}
+	}
 </script>
 
 <script lang="ts">
-	export let ProjectContent: SvelteComponent;
-	export let meta: { title: string; slug: string };
-	export let weeks: { number: number; year: number }[];
+	export let ProjectContent: SvelteComponent
+	export let meta: { title: string; slug: string }
+	export let weeks: { number: number; year: number }[]
 </script>
 
 <ul>

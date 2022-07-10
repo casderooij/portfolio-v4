@@ -1,22 +1,22 @@
 <script lang="ts">
-	import type { PositionedBlock } from '$utils/types';
+	import type { PositionedBlock } from '$utils/types'
 
-	import { spring } from 'svelte/motion';
-	import ProjectBlock from './ProjectBlock.svelte';
+	import { spring } from 'svelte/motion'
+	import ProjectBlock from './ProjectBlock.svelte'
 
-	export let number: number;
-	export let blocks: PositionedBlock[];
+	export let number: number
+	export let blocks: PositionedBlock[]
 
-	let columns = spring([1, 1, 1, 1, 1, 1, 1], { stiffness: 0.1, damping: 0.4 });
+	let columns = spring([1, 1, 1, 1, 1, 1, 1], { stiffness: 0.1, damping: 0.4 })
 
 	function handleFocusIn(block: PositionedBlock) {
-		const newColumns: number[] = new Array(7).fill(1);
-		newColumns[block.days[0] - 1] = 5;
-		$columns = newColumns.reverse();
+		const newColumns: number[] = new Array(7).fill(1)
+		newColumns[block.days[0] - 1] = 5
+		$columns = newColumns.reverse()
 	}
 
 	function handleFocusOut() {
-		$columns = new Array(7).fill(1);
+		$columns = new Array(7).fill(1)
 	}
 </script>
 

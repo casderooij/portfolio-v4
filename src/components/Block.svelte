@@ -1,7 +1,7 @@
 <script lang="ts">
-	export let column: string;
-	export let row: number;
-	export let onClick: () => void;
+	export let column: string
+	export let row: number
+	export let onClick: () => void
 </script>
 
 <div
