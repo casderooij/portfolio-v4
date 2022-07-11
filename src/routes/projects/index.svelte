@@ -1,19 +1,5 @@
-<script context="module" lang="ts">
-	import type { Load } from '@sveltejs/kit';
-	export const load: Load = async ({ fetch }) => {
-		const response = await fetch(`/api/projects.json`);
-		const projects = await response.json();
-
-		return {
-			props: {
-				projects
-			}
-		};
-	};
-</script>
-
 <script lang="ts">
-	export let projects: any;
+	export let projects: any
 </script>
 
 <ul>

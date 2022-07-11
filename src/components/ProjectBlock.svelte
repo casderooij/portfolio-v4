@@ -1,20 +1,30 @@
 <script lang="ts">
-	import type { PositionedBlock } from '$utils/types';
+	import type { PositionedBlock } from '$utils/types'
 
-	export let block: PositionedBlock;
+	export let block: PositionedBlock
 </script>
-
-<div
-	class="absolute left-2 top-0 border-l border-black border-dashed h-full"
-	style="grid-column: {block.column}; grid-row: {block.row};"
-/>
 
 <a
 	href="/projects/{block.project.slug}"
-	class="bg-white cursor-pointer undeline top-0 left-0 z-10 self-start border border-black px-2 py-1 overflow-hidden truncate font-mono text-mono-mobile text-[#00f] focus:z-20"
-	style="grid-column: {block.column}; grid-row: {block.row}; margin-top: {block.row > 1
-		? '-14px'
-		: ''};"
+	style:grid-column={block.column}
+	style:grid-row={block.row}
 >
 	{block.project.title}
 </a>
+
+<style lang="postcss">
+	a {
+		background-color: #fff;
+		font-size: var(--font-size-0);
+		font-family: var(--font-mono);
+		padding-inline: var(--size-2);
+		padding-block: var(--size-1);
+		top: 0;
+		left: 0;
+		align-self: flex-start;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		border-radius: var(--radius-1);
+	}
+</style>

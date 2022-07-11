@@ -1,13 +1,20 @@
-const tailwindcss = require('tailwindcss');
-const autoprefixer = require('autoprefixer');
+const postcssJitProps = require('postcss-jit-props')
+const OpenProps = require('open-props')
+const autoprefixer = require('autoprefixer')
+const postcssNested = require('postcss-nested')
+const postcssCustomMedia = require('postcss-custom-media')
+const postcssImport = require('postcss-import')
 
 const config = {
 	plugins: [
-		//Some plugins, like tailwindcss/nesting, need to run before Tailwind,
-		tailwindcss(),
-		//But others, like autoprefixer, need to run after,
-		autoprefixer
+		autoprefixer(),
+		postcssImport(),
+		postcssJitProps(OpenProps),
+		postcssCustomMedia({
+			importFrom: './src/styles/props.media.css'
+		}),
+		postcssNested
 	]
-};
+}
 
-module.exports = config;
+module.exports = config

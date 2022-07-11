@@ -1,20 +1,20 @@
-import type { Project } from '$utils/types';
+import type { Project } from '$utils/types'
 
 const fetchProjectData = async () => {
-	const allProjectFiles = import.meta.glob('../data/_projects/**/index.md');
-	const iterableProjectFiles = Object.entries(allProjectFiles);
+	const allProjectFiles = import.meta.glob('../data/_projects/**/index.md')
+	const iterableProjectFiles = Object.entries(allProjectFiles)
 
 	const allProjects: Project[] = await Promise.all(
 		iterableProjectFiles.map(async ([_, resolver]) => {
-			const { metadata } = await resolver();
+			const { metadata } = await resolver()
 
 			return {
 				...metadata
-			};
+			}
 		})
-	);
+	)
 
-	return allProjects;
-};
+	return allProjects
+}
 
-export default fetchProjectData;
+export default fetchProjectData

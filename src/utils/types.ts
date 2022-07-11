@@ -1,29 +1,35 @@
 export type Project = {
-	title: string;
-	slug: string;
-	weeks: Week[];
-};
+	title: string
+	slug: string
+	weeks: Week[]
+}
 
 export type Image = {
-	src: string;
-	alt: string;
-};
+	src: string
+	alt: string
+}
 
 export type PositionedBlock = Block & {
-	row: number;
-	column?: string;
-	project: Project;
-};
+	row: number
+	column?: string
+	project: Project
+}
 
 export type Block = {
-	projectSlug?: string;
-	days: number[];
-	images?: Image[];
-	tags?: string[];
-};
+	projectSlug?: string
+	days: number[]
+	images?: Image[]
+	tags?: string[]
+}
+
+export type WeekData = {
+	number: number
+	year: number
+	blocks: Block[]
+}
 
 export type Week = {
-	number: number;
-	year: number;
-	blocks: PositionedBlock[];
-};
+	number: number
+	year: number
+	blocks: PositionedBlock[]
+}
