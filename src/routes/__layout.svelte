@@ -15,8 +15,8 @@
 <script lang="ts">
 	import '../styles/app.css'
 	import type { Week } from '$utils/types'
-	import HomePageHeader from '$components/HomePageHeader.svelte'
 	import Timeline from '$components/Timeline.svelte'
+	import HomePageHeader from '$components/HomePageHeader.svelte'
 
 	export let weeks: Week[]
 </script>
@@ -31,7 +31,9 @@
 
 <main>
 	<div class="timeline-wrapper">
-		<HomePageHeader />
+		<div class="home-page-header-wrapper">
+			<HomePageHeader />
+		</div>
 		<Timeline {weeks} />
 	</div>
 	<div class="divider" />
@@ -93,6 +95,10 @@
 		display: grid;
 		grid-template-columns: 1fr 1px 1fr;
 		padding-inline: var(--size-2);
+
+		@media (--md-n-above) {
+			grid-template-columns: 1fr 1px 1fr;
+		}
 	}
 
 	.timeline-wrapper {
@@ -101,6 +107,12 @@
 		height: calc(100vh - var(--header-height));
 		overflow-y: scroll;
 		padding-right: var(--size-2);
+	}
+
+	.home-page-header-wrapper {
+		@media (--md-n-above) {
+			display: none;
+		}
 	}
 
 	.page-wrapper {

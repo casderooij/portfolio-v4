@@ -4,7 +4,7 @@
 
 <style lang="postcss">
 	div {
-		width: 100vw;
+		width: 0;
 
 		@media (--md-n-above) {
 			width: auto;
