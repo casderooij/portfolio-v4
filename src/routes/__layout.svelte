@@ -22,7 +22,7 @@
 </script>
 
 <header>
-	<a href="/">/</a>
+	<a href="/">timeline</a>
 	<ul>
 		<li><a href="/info">info</a></li>
 		<li><a href="/projects">projects</a></li>
@@ -31,6 +31,9 @@
 
 <main>
 	<div class="timeline-wrapper">
+		<div class="homepage-header-wrapper">
+			<HomePageHeader />
+		</div>
 		<Timeline {weeks} />
 	</div>
 	<div class="divider" />
@@ -104,6 +107,14 @@
 		height: calc(100vh - var(--header-height));
 		overflow-y: scroll;
 		padding-inline: var(--size-2);
+	}
+
+	.homepage-header-wrapper {
+		width: 50%;
+		margin-block-end: var(--size-5);
+		@media (--md-n-above) {
+			display: none;
+		}
 	}
 
 	.divider {
