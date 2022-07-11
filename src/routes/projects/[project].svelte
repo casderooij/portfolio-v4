@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	import type { Load } from './__types/[project]'
+	import type { Load } from '../../../.svelte-kit/types/src/routes/projects/__types/[project]'
 	import type { SvelteComponent } from 'svelte'
 	import type { Week } from '$utils/types'
 

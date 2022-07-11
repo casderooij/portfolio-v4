@@ -91,7 +91,7 @@
 		min-height: calc(100vh - var(--header-height));
 		scroll-margin-top: var(--header-height);
 		display: grid;
-		grid-template-columns: 1fr 0 0;
+		grid-template-columns: 1fr 1px 1fr;
 		padding-inline: var(--size-2);
 	}
 
@@ -110,11 +110,10 @@
 
 	.divider {
 		margin-block: var(--size-2);
-		border-right: 0;
+		border-right: var(--border);
 
-		@media (--lg-n-above) {
-			border-right: var(--border);
-		}
+		/* @media (--lg-n-above) {
+		} */
 	}
 
 	footer {
