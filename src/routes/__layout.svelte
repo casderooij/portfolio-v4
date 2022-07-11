@@ -44,10 +44,10 @@
 	<p>Cas de Rooij</p>
 	<ul>
 		<li>
-			<a href="#">github</a>
+			<a href="https://github.com/casderooij" rel="external">github</a>
 		</li>
 		<li>
-			<a href="#">instagram</a>
+			<a href="instagram" rel="external">instagram</a>
 		</li>
 	</ul>
 </footer>
@@ -91,7 +91,7 @@
 		min-height: calc(100vh - var(--header-height));
 		scroll-margin-top: var(--header-height);
 		display: grid;
-		grid-template-columns: 1fr 1px 1fr;
+		grid-template-columns: 1fr 0 0;
 		padding-inline: var(--size-2);
 	}
 
@@ -110,7 +110,11 @@
 
 	.divider {
 		margin-block: var(--size-2);
-		border-right: var(--border);
+		border-right: 0;
+
+		@media (--lg-n-above) {
+			border-right: var(--border);
+		}
 	}
 
 	footer {

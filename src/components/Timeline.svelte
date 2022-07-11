@@ -7,6 +7,6 @@
 
 <ul>
 	{#each weeks as week}
-		<Week number={week.number} blocks={week.blocks} />
+		<Week blocks={week.blocks} />
 	{/each}
 </ul>

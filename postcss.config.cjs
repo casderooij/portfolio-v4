@@ -1,20 +1,19 @@
-const cssnano = require('cssnano')
 const postcssJitProps = require('postcss-jit-props')
 const OpenProps = require('open-props')
-
-const mode = process.env.NODE_ENV
-const dev = mode === 'development'
+const autoprefixer = require('autoprefixer')
+const postcssNested = require('postcss-nested')
+const postcssCustomMedia = require('postcss-custom-media')
+const postcssImport = require('postcss-import')
 
 const config = {
 	plugins: [
-		require('autoprefixer'),
-		require('postcss-nested'),
+		autoprefixer(),
+		postcssImport(),
 		postcssJitProps(OpenProps),
-
-		!dev &&
-			cssnano({
-				preset: 'default'
-			})
+		postcssCustomMedia({
+			importFrom: './src/styles/props.media.css'
+		}),
+		postcssNested
 	]
 }
 

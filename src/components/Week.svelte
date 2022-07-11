@@ -4,7 +4,6 @@
 	import { spring } from 'svelte/motion'
 	import ProjectBlock from './ProjectBlock.svelte'
 
-	export let number: number
 	export let blocks: PositionedBlock[]
 
 	let columns = spring([1, 1, 1, 1, 1, 1, 1], { stiffness: 0.1, damping: 0.4 })
@@ -51,10 +50,6 @@
 	}
 	li:last-child {
 		border-bottom: none;
-	}
-
-	.week-number {
-		font-size: var(--font-size-0);
 	}
 
 	.week-wrapper {
