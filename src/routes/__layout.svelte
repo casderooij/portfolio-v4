@@ -31,9 +31,6 @@
 
 <main>
 	<div class="timeline-wrapper">
-		<div class="home-page-header-wrapper">
-			<HomePageHeader />
-		</div>
 		<Timeline {weeks} />
 	</div>
 	<div class="divider" />
@@ -93,8 +90,9 @@
 		min-height: calc(100vh - var(--header-height));
 		scroll-margin-top: var(--header-height);
 		display: grid;
-		grid-template-columns: 1fr 1px 1fr;
-		padding-inline: var(--size-2);
+		grid-template-columns: 100vw 1px 1fr;
+		position: relative;
+		overflow-x: hidden;
 
 		@media (--md-n-above) {
 			grid-template-columns: 1fr 1px 1fr;
@@ -103,29 +101,19 @@
 
 	.timeline-wrapper {
 		position: sticky;
-		top: var(--header-height);
 		height: calc(100vh - var(--header-height));
 		overflow-y: scroll;
-		padding-right: var(--size-2);
-	}
-
-	.home-page-header-wrapper {
-		@media (--md-n-above) {
-			display: none;
-		}
-	}
-
-	.page-wrapper {
-		margin-block: var(--size-2);
-		padding-left: var(--size-2);
+		padding-inline: var(--size-2);
 	}
 
 	.divider {
 		margin-block: var(--size-2);
 		border-right: var(--border);
+		display: none;
 
-		/* @media (--lg-n-above) {
-		} */
+		@media (--md-n-above) {
+			display: block;
+		}
 	}
 
 	footer {
