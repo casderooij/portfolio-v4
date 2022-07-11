@@ -17,6 +17,7 @@
 	import type { Week } from '$utils/types'
 	import Timeline from '$components/Timeline.svelte'
 	import HomePageHeader from '$components/HomePageHeader.svelte'
+	import Footer from '$components/Footer.svelte'
 
 	export let weeks: Week[]
 </script>
@@ -42,17 +43,7 @@
 	</div>
 </main>
 
-<footer>
-	<p>Cas de Rooij</p>
-	<ul>
-		<li>
-			<a href="https://github.com/casderooij" rel="external">github</a>
-		</li>
-		<li>
-			<a href="instagram" rel="external">instagram</a>
-		</li>
-	</ul>
-</footer>
+<Footer />
 
 <style lang="postcss">
 	:global(html) {
@@ -124,19 +115,6 @@
 
 		@media (--md-n-above) {
 			display: block;
-		}
-	}
-
-	footer {
-		margin-inline: var(--size-2);
-		padding-block: var(--size-2);
-		display: flex;
-		justify-content: space-between;
-		border-top: var(--border);
-
-		ul {
-			display: flex;
-			gap: var(--size-2);
 		}
 	}
 </style>
