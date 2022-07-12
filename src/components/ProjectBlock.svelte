@@ -6,6 +6,7 @@
 
 <a
 	href="/projects/{block.project.slug}"
+	class="underline"
 	style:grid-column={block.column}
 	style:grid-row={block.row}
 >
