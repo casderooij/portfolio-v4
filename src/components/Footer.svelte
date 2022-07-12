@@ -1,15 +1,15 @@
+<script>
+	import ExternalLink from './ExternalLink.svelte'
+</script>
+
 <footer>
 	<p>Cas de Rooij</p>
 	<ul>
 		<li>
-			<a href="https://github.com/casderooij" rel="external">
-				<img src="/icons/CarbonLogoGithub.svg" alt="Github logo" />
-			</a>
+			<ExternalLink href="https://github.com/casderooij" label="github" />
 		</li>
 		<li>
-			<a href="instagram" rel="external">
-				<img src="/icons/CarbonLogoInstagram.svg" alt="Instagram logo" />
-			</a>
+			<ExternalLink href="https://www.instagram.com/cas_de_rooij/" label="instagram" />
 		</li>
 	</ul>
 </footer>
@@ -26,7 +26,7 @@
 
 	ul {
 		display: flex;
-		gap: var(--size-2);
+		gap: var(--size-4);
 	}
 
 	img {
