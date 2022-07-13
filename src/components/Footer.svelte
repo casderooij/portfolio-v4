@@ -3,7 +3,6 @@
 </script>
 
 <footer>
-	<p>Cas de Rooij</p>
 	<ul>
 		<li>
 			<ExternalLink href="https://github.com/casderooij" label="github" />
@@ -16,21 +15,18 @@
 
 <style lang="postcss">
 	footer {
-		margin-inline: var(--size-2);
-		padding-block: var(--size-2);
+		margin-inline: var(--spacing);
+		padding-block: var(--spacing);
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-end;
 		align-items: center;
 		border-top: var(--border);
+		text-transform: uppercase;
+		font-size: var(--font-size-0);
 	}
 
 	ul {
 		display: flex;
 		gap: var(--size-4);
-	}
-
-	img {
-		display: block;
-		width: var(--size-5);
 	}
 </style>
