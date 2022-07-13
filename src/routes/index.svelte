@@ -9,7 +9,7 @@
 <style lang="postcss">
 	div {
 		display: none;
-		padding: var(--size-2);
+		padding: var(--spacing);
 
 		@media (--md-n-above) {
 			display: block;

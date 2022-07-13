@@ -4,7 +4,7 @@
 </script>
 
 <a {href} rel="external">
-	{label}
+	<span>{label}</span>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -23,13 +23,15 @@
 
 <style lang="postcss">
 	a {
-		display: flex;
-		align-items: center;
-		gap: 2px;
-		color: #000;
+		position: relative;
+		padding-right: 10px;
+		text-decoration: none;
 	}
 
 	svg {
-		width: 10px;
+		position: absolute;
+		right: 0px;
+		top: -4px;
+		width: 8px;
 	}
 </style>

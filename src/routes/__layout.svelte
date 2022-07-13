@@ -18,17 +18,12 @@
 	import Timeline from '$components/Timeline.svelte'
 	import HomePageHeader from '$components/HomePageHeader.svelte'
 	import Footer from '$components/Footer.svelte'
+	import Header from '$components/Header.svelte'
 
 	export let weeks: Week[]
 </script>
 
-<header>
-	<a href="/">timeline</a>
-	<ul>
-		<li><a href="/info">info</a></li>
-		<li><a href="/projects">projects</a></li>
-	</ul>
-</header>
+<Header />
 
 <main>
 	<div class="timeline-wrapper">
@@ -46,40 +41,6 @@
 <Footer />
 
 <style lang="postcss">
-	:global(html) {
-		--header-height: var(--size-8);
-	}
-
-	header {
-		margin-inline: var(--size-2);
-		border-bottom: var(--border);
-
-		position: sticky;
-		top: 0;
-		height: var(--header-height);
-		z-index: 2;
-
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-
-		background-color: var(--background);
-
-		a {
-			background-color: white;
-			color: var(--text);
-			text-decoration: none;
-			padding-inline: var(--size-3);
-			padding-block: var(--size-1);
-			border-radius: var(--radius-round);
-		}
-
-		ul {
-			display: flex;
-			gap: var(--size-2);
-		}
-	}
-
 	main {
 		min-height: calc(100vh - var(--header-height));
 		scroll-margin-top: var(--header-height);
@@ -97,7 +58,8 @@
 		position: sticky;
 		height: calc(100vh - var(--header-height));
 		overflow-y: scroll;
-		padding-inline: var(--size-2);
+		padding-block-start: var(--spacing);
+		padding-inline: var(--spacing);
 	}
 
 	.homepage-header-wrapper {
@@ -109,7 +71,7 @@
 	}
 
 	.divider {
-		margin-block: var(--size-2);
+		margin-block: var(--spacing);
 		border-right: var(--border);
 		display: none;
 

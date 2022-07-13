@@ -5,20 +5,23 @@
 }
 
 :root {
-	--background: #dedede;
-	--text: #1f1f1f;
-	--accent: #0044ff;
+	--h: 50deg;
+	--bg-1: hsl(var(--h), 4%, 94%);
+	--bg-2: hsl(var(--h), 4%, 100%);
+	--bg-3: hsl(var(--h), 10%, 84%);
 
-	--font-sans: 'PP Neue Montreal', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
-		Noto Sans, sans-serif;
+	--bor-1: hsl(var(--h), 4%, 4%);
 
-	--border: 1px solid var(--text);
-}
+	--txt-1: hsl(0deg, 0%, 10%);
+	--acc-1: hsl(230, 100%, 50%);
 
-@media (--md-n-above) {
-	body {
-		background-color: red;
-	}
+	--font-neue-montreal: 'PP Neue Montreal', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+		Cantarell, Noto Sans, sans-serif;
+
+	--border: 1px solid var(--bor-1);
+
+	--spacing: var(--size-2);
+	--header-height: var(--size-8);
 }
 
 *,
@@ -30,9 +33,9 @@
 body {
 	padding: 0;
 	margin: 0;
-	background-color: var(--background);
-	color: var(--text);
-	font-family: var(--font-sans);
+	background-color: var(--bg-1);
+	color: var(--txt-1);
+	font-family: var(--font-neue-montreal);
 }
 
 h1,
@@ -50,10 +53,9 @@ p {
 }
 
 a {
-	color: var(--accent);
-	text-decoration: none;
-}
-a.underline {
+	color: var(--acc-1);
+	font-family: var(--font-mono);
+	text-transform: uppercase;
 	text-decoration: underline;
 	text-underline-offset: 2px;
 }

@@ -4,11 +4,11 @@
 
 <style lang="postcss">
 	div {
-		background-color: var(--background);
+		background-color: var(--bg-1);
 		width: 100vw;
 		height: 100%;
 		transform: translateX(-100%);
-		padding: var(--size-2);
+		padding: var(--spacing);
 
 		@media (--md-n-above) {
 			width: 100%;
