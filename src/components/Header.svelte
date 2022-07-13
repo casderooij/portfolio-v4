@@ -1,5 +1,5 @@
 <header>
-	<a href="/">timeline</a>
+	<a href="/">home</a>
 	<ul>
 		<li><a href="/info">info</a></li>
 		<!-- <li><a href="/projects">projects</a></li> -->
@@ -27,10 +27,7 @@
 			color: var(--txt-1);
 			padding-inline: var(--size-3);
 			padding-block: var(--size-1);
-			border-radius: var(--radius-round);
-			font-family: var(--font-neue-montreal);
 			text-decoration: none;
-			text-transform: none;
 		}
 
 		ul {

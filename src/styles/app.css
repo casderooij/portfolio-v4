@@ -1,22 +1,21 @@
 @font-face {
-	font-family: 'PP Neue Montreal';
-	src: url('/fonts/pp-neue-montreal-regular.woff2') format('woff2'),
-		url('/fonts/pp-neue-montreal-regular.woff') format('woff');
+	font-family: 'Sligoil';
+	src: url('/fonts/sligoil-micro.woff2') format('woff2'),
+		url('/fonts/sligoil-micro.woff') format('woff');
 }
 
 :root {
 	--h: 50deg;
-	--bg-1: hsl(var(--h), 4%, 94%);
+	--bg-1: hsl(var(--h), 4%, 88%);
 	--bg-2: hsl(var(--h), 4%, 100%);
 	--bg-3: hsl(var(--h), 10%, 84%);
 
-	--bor-1: hsl(var(--h), 4%, 4%);
+	--bor-1: #000;
 
-	--txt-1: hsl(0deg, 0%, 10%);
-	--acc-1: hsl(230, 100%, 50%);
+	--txt-1: #000;
+	--acc: hsl(134, 80%, 43%);
 
-	--font-neue-montreal: 'PP Neue Montreal', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
-		Cantarell, Noto Sans, sans-serif;
+	--font-sligoil: 'Sligoil', Inconsolata, ui-monospace, monospace;
 
 	--border: 1px solid var(--bor-1);
 
@@ -35,7 +34,7 @@ body {
 	margin: 0;
 	background-color: var(--bg-1);
 	color: var(--txt-1);
-	font-family: var(--font-neue-montreal);
+	font-family: var(--font-sligoil);
 }
 
 h1,
@@ -45,6 +44,7 @@ h4,
 h5,
 h6 {
 	margin: 0;
+	font-family: var(--font-sans);
 	font-weight: 400;
 }
 
@@ -53,8 +53,7 @@ p {
 }
 
 a {
-	color: var(--acc-1);
-	font-family: var(--font-mono);
+	color: var(--acc);
 	text-transform: uppercase;
 	text-decoration: underline;
 	text-underline-offset: 2px;

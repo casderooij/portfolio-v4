@@ -1,3 +1,3 @@
 <header>
-	<h1>creative (web) developer</h1>
+	<h1>Creative (web) developer</h1>
 </header>

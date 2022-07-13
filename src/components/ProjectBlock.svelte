@@ -16,7 +16,6 @@
 <style lang="postcss">
 	a {
 		background-color: var(--bg-2);
-		color: var(--acc-1);
 		padding-inline: var(--size-2);
 		padding-block: var(--size-1);
 		top: 0;
@@ -26,6 +25,5 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		font-size: var(--font-size-0);
-		border-radius: var(--radius-1);
 	}
 </style>
