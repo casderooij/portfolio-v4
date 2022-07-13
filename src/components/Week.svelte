@@ -60,7 +60,6 @@
 	.single-day {
 		background-color: var(--blue-3);
 		aspect-ratio: var(--ratio-square);
-		border-radius: var(--radius-1);
 		cursor: pointer;
 	}
 </style>

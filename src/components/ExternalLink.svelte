@@ -24,14 +24,14 @@
 <style lang="postcss">
 	a {
 		position: relative;
-		padding-right: 10px;
+		padding-right: 0.8em;
 		text-decoration: none;
 	}
 
 	svg {
 		position: absolute;
-		right: 0px;
-		top: -4px;
-		width: 8px;
+		right: 0;
+		top: -0.5em;
+		width: 0.7em;
 	}
 </style>
