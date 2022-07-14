@@ -61,5 +61,6 @@
 		background-color: var(--blue-3);
 		aspect-ratio: var(--ratio-square);
 		cursor: pointer;
+		border-radius: var(--radius-2);
 	}
 </style>

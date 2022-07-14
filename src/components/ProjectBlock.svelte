@@ -23,6 +23,7 @@
 		align-self: flex-start;
 		white-space: nowrap;
 		overflow: hidden;
+		border-radius: var(--radius-2);
 		text-overflow: ellipsis;
 		font-size: var(--font-size-0);
 	}

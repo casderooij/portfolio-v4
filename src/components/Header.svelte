@@ -24,6 +24,7 @@
 			color: var(--txt-1);
 			padding-inline: var(--size-3);
 			padding-block: var(--size-1);
+			border-radius: var(--radius-2);
 			text-decoration: none;
 		}
 	}
