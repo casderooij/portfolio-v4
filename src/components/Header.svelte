@@ -1,9 +1,6 @@
 <header>
 	<a href="/">home</a>
-	<ul>
-		<li><a href="/info">info</a></li>
-		<!-- <li><a href="/projects">projects</a></li> -->
-	</ul>
+	<a href="/info">info</a>
 </header>
 
 <style lang="postcss">
@@ -28,11 +25,6 @@
 			padding-inline: var(--size-3);
 			padding-block: var(--size-1);
 			text-decoration: none;
-		}
-
-		ul {
-			display: flex;
-			gap: var(--spacing);
 		}
 	}
 </style>

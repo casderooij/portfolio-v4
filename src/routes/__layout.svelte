@@ -50,6 +50,10 @@
 		overflow-x: hidden;
 
 		@media (--md-n-above) {
+			grid-template-columns: 3fr 1px 2fr;
+		}
+
+		@media (--xl-n-above) {
 			grid-template-columns: 1fr 1px 1fr;
 		}
 	}
