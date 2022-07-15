@@ -5,14 +5,13 @@
 }
 
 :root {
-	--h: 50deg;
-	--bg-1: hsl(var(--h), 4%, 88%);
-	--bg-2: hsl(var(--h), 4%, 100%);
-	--bg-3: hsl(var(--h), 10%, 84%);
+	--bg-1: hsl(40, 23%, 90%);
+	--bg-2: #ffffff;
+	--bg-3: #303030;
 
-	--bor-1: #000;
+	--bor-1: hsl(0, 0%, 72%);
 
-	--txt-1: #000;
+	--txt-1: #303030;
 	--acc: hsl(238, 100%, 52%);
 
 	--font-sligoil: 'Sligoil', Inconsolata, ui-monospace, monospace;

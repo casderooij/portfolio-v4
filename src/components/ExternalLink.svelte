@@ -30,7 +30,7 @@
 
 	svg {
 		position: absolute;
-		width: 0.7em;
+		width: 0.6em;
 		height: 0.7em;
 		top: -0.2em;
 		right: -0.8em;

@@ -15,7 +15,8 @@
 
 <style lang="postcss">
 	a {
-		background-color: var(--bg-2);
+		background-color: var(--bg-3);
+		color: white;
 		padding-inline: var(--size-2);
 		padding-block: var(--size-1);
 		top: 0;
@@ -24,7 +25,8 @@
 		white-space: nowrap;
 		overflow: hidden;
 		border-radius: var(--radius-2);
-		text-overflow: ellipsis;
 		font-size: var(--font-size-0);
+		text-decoration: none;
+		text-overflow: ellipsis;
 	}
 </style>
