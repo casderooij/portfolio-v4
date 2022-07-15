@@ -23,7 +23,7 @@
 	export let weeks: Week[]
 </script>
 
-<div class="header-wrapper sticky-header">
+<div class="header-wrapper fixed-header">
 	<Header />
 </div>
 
@@ -36,7 +36,7 @@
 	</div>
 	<div class="divider" />
 	<div class="page-wrapper">
-		<div class="page-header-wrapper sticky-header">
+		<div class="page-header-wrapper fixed-header">
 			<Header />
 		</div>
 		<slot />
@@ -46,8 +46,9 @@
 <Footer />
 
 <style lang="postcss">
-	.sticky-header {
-		position: sticky;
+	.fixed-header {
+		position: fixed;
+		right: 0;
 		top: 0;
 		z-index: 2;
 	}
@@ -83,7 +84,7 @@
 	}
 
 	.mobile-intro-wrapper {
-		margin-top: 1rem;
+		margin-top: 2rem;
 		margin-bottom: 6rem;
 
 		@media (--md-n-above) {

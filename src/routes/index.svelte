@@ -8,6 +8,7 @@
 
 <style lang="postcss">
 	.wrapper {
+		padding-block-start: 4rem;
 		padding-inline: var(--spacing);
 	}
 </style>
