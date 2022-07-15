@@ -1,10 +1,10 @@
 <div>
-	<h1>Creative <span>web</span> developer</h1>
+	<h1>Creative<br /><span>web</span> developer</h1>
 </div>
 
 <style lang="postcss">
 	div {
-		padding-block: var(--spacing);
+		margin-block-start: 8rem;
 	}
 
 	h1 {

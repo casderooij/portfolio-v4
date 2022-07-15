@@ -8,7 +8,8 @@
 		width: 100vw;
 		height: 100%;
 		transform: translateX(-100%);
-		padding: var(--spacing);
+		padding-inline: var(--spacing);
+		padding-block-start: 8rem;
 
 		@media (--md-n-above) {
 			width: 100%;

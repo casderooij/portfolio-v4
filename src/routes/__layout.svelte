@@ -28,7 +28,7 @@
 	$: currentPage.set(path)
 </script>
 
-<div class="nav-wrapper fixed-nav">
+<div class="nav-wrapper">
 	<MainNav />
 </div>
 
@@ -41,7 +41,7 @@
 	</div>
 	<div class="divider" />
 	<div class="page-wrapper">
-		<div class="page-nav-wrapper fixed-nav">
+		<div class="page-nav-wrapper">
 			<MainNav />
 		</div>
 		<slot />
@@ -51,13 +51,6 @@
 <Footer />
 
 <style lang="postcss">
-	.fixed-nav {
-		position: fixed;
-		right: 0;
-		top: 0;
-		z-index: 2;
-	}
-
 	.nav-wrapper {
 		@media (--md-n-above) {
 			display: none;
@@ -86,11 +79,14 @@
 		height: calc(100vh);
 		overflow-y: scroll;
 		padding-inline: var(--spacing);
+
+		@media (--md-n-above) {
+			padding-block-start: 2rem;
+		}
 	}
 
 	.mobile-intro-wrapper {
-		margin-top: 3rem;
-		margin-bottom: 8rem;
+		margin-block-end: 12rem;
 
 		@media (--md-n-above) {
 			display: none;

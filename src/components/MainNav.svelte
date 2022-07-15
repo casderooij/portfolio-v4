@@ -19,6 +19,11 @@
 
 <style lang="postcss">
 	nav {
+		position: fixed;
+		right: 0;
+		top: 0;
+		z-index: 2;
+
 		margin-inline: var(--spacing);
 		padding-block-start: var(--spacing);
 

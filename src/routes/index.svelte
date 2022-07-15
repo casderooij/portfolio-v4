@@ -2,13 +2,12 @@
 	import Intro from '$components/Intro.svelte'
 </script>
 
-<div class="wrapper">
+<div class="container">
 	<Intro />
 </div>
 
 <style lang="postcss">
-	.wrapper {
-		padding-block-start: 4rem;
+	.container {
 		padding-inline: var(--spacing);
 	}
 </style>
