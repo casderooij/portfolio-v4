@@ -1,12 +1,13 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit'
-	export const load: Load = async ({ fetch }) => {
+	export const load: Load = async ({ url, fetch }) => {
 		const response = await fetch(`/api/weeks.json`)
 		const weeks = await response.json()
 
 		return {
 			props: {
-				weeks
+				weeks,
+				path: url.pathname
 			}
 		}
 	}
@@ -17,14 +18,18 @@
 	import type { Week } from '$utils/types'
 	import Timeline from '$components/Timeline.svelte'
 	import Footer from '$components/Footer.svelte'
-	import Header from '$components/Header.svelte'
+	import MainNav from '$components/MainNav.svelte'
 	import Intro from '$components/Intro.svelte'
+	import { currentPage } from '$utils/stores'
 
 	export let weeks: Week[]
+	export let path: string
+
+	$: currentPage.set(path)
 </script>
 
-<div class="header-wrapper fixed-header">
-	<Header />
+<div class="nav-wrapper fixed-nav">
+	<MainNav />
 </div>
 
 <main>
@@ -36,8 +41,8 @@
 	</div>
 	<div class="divider" />
 	<div class="page-wrapper">
-		<div class="page-header-wrapper fixed-header">
-			<Header />
+		<div class="page-nav-wrapper fixed-nav">
+			<MainNav />
 		</div>
 		<slot />
 	</div>
@@ -46,14 +51,14 @@
 <Footer />
 
 <style lang="postcss">
-	.fixed-header {
+	.fixed-nav {
 		position: fixed;
 		right: 0;
 		top: 0;
 		z-index: 2;
 	}
 
-	.header-wrapper {
+	.nav-wrapper {
 		@media (--md-n-above) {
 			display: none;
 		}
@@ -84,17 +89,9 @@
 	}
 
 	.mobile-intro-wrapper {
-		margin-top: 2rem;
-		margin-bottom: 6rem;
+		margin-top: 3rem;
+		margin-bottom: 8rem;
 
-		@media (--md-n-above) {
-			display: none;
-		}
-	}
-
-	.homepage-header-wrapper {
-		width: 50%;
-		margin-block-end: var(--size-5);
 		@media (--md-n-above) {
 			display: none;
 		}
@@ -110,7 +107,7 @@
 		}
 	}
 
-	.page-header-wrapper {
+	.page-nav-wrapper {
 		display: none;
 
 		@media (--md-n-above) {

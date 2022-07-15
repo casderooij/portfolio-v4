@@ -9,6 +9,7 @@
 
 	h1 {
 		font-size: var(--size-8);
+		line-height: 0.95;
 	}
 
 	span {
