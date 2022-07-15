@@ -8,7 +8,6 @@
 		meta: { title: string; slug: string }
 		weeks: { number: number; year: number }[]
 	}> = async ({ params }) => {
-		console.log('params:::', { params })
 		const project = await import(`../../data/_projects/${params.project}/index.md`)
 		const meta = { title: project.metadata.title, slug: project.metadata.slug }
 		const weeks = project.metadata.weeks.map((week: Week) => ({
