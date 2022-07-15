@@ -15,8 +15,9 @@
 
 <style lang="postcss">
 	a {
-		background-color: var(--bg-3);
-		color: white;
+		/* background-color: var(--bg-3); */
+		background-color: #fff;
+		color: #303030;
 		padding-inline: var(--size-2);
 		padding-block: var(--size-1);
 		top: 0;

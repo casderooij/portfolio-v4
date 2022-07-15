@@ -1,31 +1,32 @@
 <header>
-	<a href="/">home</a>
-	<a href="/info">info</a>
+	<nav>
+		<a href="/">home</a>
+		<a href="/info">info</a>
+	</nav>
 </header>
 
 <style lang="postcss">
 	header {
 		margin-inline: var(--spacing);
-		border-bottom: var(--border);
+		padding-block-start: var(--spacing);
 
-		position: sticky;
-		top: 0;
-		height: var(--header-height);
-		z-index: 2;
-
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-
-		background-color: var(--bg-1);
-
-		a {
-			background-color: var(--bg-2);
-			color: var(--txt-1);
-			padding-inline: var(--size-3);
-			padding-block: var(--size-1);
-			border-radius: var(--radius-2);
-			text-decoration: none;
+		@media (--md-n-above) {
+			padding-block-end: var(--spacing);
 		}
+	}
+
+	nav {
+		display: flex;
+		justify-content: flex-end;
+		gap: 0.5rem;
+	}
+
+	a {
+		background-color: var(--bg-3);
+		color: white;
+		padding-inline: var(--size-3);
+		padding-block: var(--size-1);
+		border-radius: var(--radius-round);
+		text-decoration: none;
 	}
 </style>

@@ -1,4 +1,10 @@
 @font-face {
+	font-family: 'PPMondwest';
+	src: url('/fonts/PPMondwest-Regular.woff2') format('woff2'),
+		url('/fonts/PPMondwest-Regular.woff') format('woff');
+}
+
+@font-face {
 	font-family: 'Sligoil';
 	src: url('/fonts/sligoil-micro.woff2') format('woff2'),
 		url('/fonts/sligoil-micro.woff') format('woff');
@@ -15,11 +21,11 @@
 	--acc: hsl(238, 100%, 52%);
 
 	--font-sligoil: 'Sligoil', Inconsolata, ui-monospace, monospace;
+	--font-mondwest: 'PPMondwest', serif;
 
 	--border: 1px solid var(--bor-1);
 
 	--spacing: var(--size-2);
-	--header-height: var(--size-8);
 }
 
 *,
@@ -43,8 +49,12 @@ h4,
 h5,
 h6 {
 	margin: 0;
-	font-family: var(--font-sans);
+	font-family: var(--font-mondwest);
 	font-weight: 400;
+}
+
+h1 {
+	font-size: var(--font-size-6);
 }
 
 p {

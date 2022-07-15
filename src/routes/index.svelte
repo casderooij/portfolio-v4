@@ -1,18 +1,13 @@
 <script lang="ts">
-	import HomePageHeader from '$components/HomePageHeader.svelte'
+	import Intro from '$components/Intro.svelte'
 </script>
 
-<div>
-	<HomePageHeader />
+<div class="wrapper">
+	<Intro />
 </div>
 
 <style lang="postcss">
-	div {
-		display: none;
-		padding: var(--spacing);
-
-		@media (--md-n-above) {
-			display: block;
-		}
+	.wrapper {
+		padding-inline: var(--spacing);
 	}
 </style>

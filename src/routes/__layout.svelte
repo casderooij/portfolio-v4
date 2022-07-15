@@ -16,24 +16,29 @@
 	import '../styles/app.css'
 	import type { Week } from '$utils/types'
 	import Timeline from '$components/Timeline.svelte'
-	import HomePageHeader from '$components/HomePageHeader.svelte'
 	import Footer from '$components/Footer.svelte'
 	import Header from '$components/Header.svelte'
+	import Intro from '$components/Intro.svelte'
 
 	export let weeks: Week[]
 </script>
 
-<Header />
+<div class="header-wrapper sticky-header">
+	<Header />
+</div>
 
 <main>
 	<div class="timeline-wrapper">
-		<div class="homepage-header-wrapper">
-			<HomePageHeader />
+		<div class="mobile-intro-wrapper">
+			<Intro />
 		</div>
 		<Timeline {weeks} />
 	</div>
 	<div class="divider" />
 	<div class="page-wrapper">
+		<div class="page-header-wrapper sticky-header">
+			<Header />
+		</div>
 		<slot />
 	</div>
 </main>
@@ -41,9 +46,20 @@
 <Footer />
 
 <style lang="postcss">
+	.sticky-header {
+		position: sticky;
+		top: 0;
+		z-index: 2;
+	}
+
+	.header-wrapper {
+		@media (--md-n-above) {
+			display: none;
+		}
+	}
+
 	main {
-		min-height: calc(100vh - var(--header-height));
-		scroll-margin-top: var(--header-height);
+		min-height: calc(100vh);
 		display: grid;
 		grid-template-columns: 100vw 1px 1fr;
 		position: relative;
@@ -60,10 +76,19 @@
 
 	.timeline-wrapper {
 		position: sticky;
-		height: calc(100vh - var(--header-height));
+		top: 0;
+		height: calc(100vh);
 		overflow-y: scroll;
-		padding-block-start: var(--spacing);
 		padding-inline: var(--spacing);
+	}
+
+	.mobile-intro-wrapper {
+		margin-top: 1rem;
+		margin-bottom: 6rem;
+
+		@media (--md-n-above) {
+			display: none;
+		}
 	}
 
 	.homepage-header-wrapper {
@@ -77,6 +102,14 @@
 	.divider {
 		margin-block: var(--spacing);
 		border-right: var(--border);
+		display: none;
+
+		@media (--md-n-above) {
+			display: block;
+		}
+	}
+
+	.page-header-wrapper {
 		display: none;
 
 		@media (--md-n-above) {
